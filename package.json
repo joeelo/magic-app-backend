@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.2",
@@ -23,5 +24,13 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeelo/magic-app-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joeelo/magic-app-backend/issues"
+  },
+  "homepage": "https://github.com/joeelo/magic-app-backend#readme",
   "description": ""
 }
