@@ -3,6 +3,7 @@ const app = express();
 const router = new express.Router();
 const mtg = require('mtgsdk');
 const cors = require("cors");
+const Collection = require("../models/Collection")
 
 app.use(cors());
 app.use(function(req, res, next) {
@@ -20,8 +21,15 @@ router.get(`/collection/:name?`, async (req, res) => {
   }
 })
 
-// router.post(`/library`, async (req, res) => {
+router.post(`/collection`, async (req, res) => {
+  const collection = new Collection(req.body)
+  try {
+    await collection.save()
+    res.send(collection)
+  } catch (error) {
+    res.status(400).send("something has gone wrong")
+  }
+})
 
-// })
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const mongoose = require(`mongoose`);
 const validator = require(`validator`);
+const Collection = require("./Collection")
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -30,7 +31,10 @@ const userSchema = new mongoose.Schema({
         throw new Error("Your password cannot contain the word 'password'")
       }
     }
-  }
+  }, 
+
+  collections: [{type: String}]
+
 })
 
 const User = new mongoose.model("User", userSchema);
