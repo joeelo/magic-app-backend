@@ -3,12 +3,20 @@ const validator = require("validator");
 
 const CollectionSchema = new mongoose.Schema({
   name: {
-    type: "string",
+    type: String,
     require: true
   },
 
-  user: [{type: String}]
+  cards: [{
+    type: Number,
+    name: String,
+    numberOwned: Number
+  }],
 
+  user: {
+    type: String,
+    require: true
+  }
 
 })
 
