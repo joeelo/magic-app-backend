@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
 });
 
 
-router.get(`/collection/:name?`, async (req, res) => {
+router.get(`/mtg-collection/:name?`, async (req, res) => {
   const cards = await mtg.card.where({name: req.query.name})
   try {
     res.send(cards);
@@ -23,17 +23,16 @@ router.get(`/collection/:name?`, async (req, res) => {
   }
 })
 
-router.post(`/collection/:title`, async (req, res) => {
-  const collection = Collection.find({name: req.body.title});
-  console.log(req.body.title)
+router.get(`/user-collection`, async (req, res) => {
+  const collection = await Collection.find({user: '5cd6e4d14edb0e0f588cb517'});
   try {
-    res.send(collection);
+    res.send({collection});
   } catch(error) {
     res.status(400).send(error);
   }
 })
 
-router.post(`/collection`, async (req, res) => {
+router.post(`/mtg-collection`, async (req, res) => {
   const collection = new Collection(req.body)
   try {
     await collection.save()

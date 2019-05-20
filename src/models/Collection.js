@@ -20,6 +20,6 @@ const CollectionSchema = new mongoose.Schema({
 
 })
 
-const Collection = new mongoose.model("collection", CollectionSchema);
+const Collection = new mongoose.model("Collection", CollectionSchema);
 
 module.exports = Collection;
