@@ -13,7 +13,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 router.get(`/mtg-collection/:name?`, async (req, res) => {
   const cards = await mtg.card.where({name: req.query.name})
   try {
@@ -29,6 +28,16 @@ router.get(`/user-collection`, async (req, res) => {
     res.send({collection});
   } catch(error) {
     res.status(400).send(error);
+  }
+})
+
+router.post(`/user-collection/:multiverseId?`, async (req, res) => {
+  try {
+    const multiverseId = req.query.multiverseId;
+    const card = await mtg.card.find(multiverseId);
+    res.send(card.card.name)
+  } catch (error) {
+    res.status(400).send(error)
   }
 })
 
