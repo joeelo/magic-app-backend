@@ -7,19 +7,12 @@ const CollectionSchema = new mongoose.Schema({
     require: true
   },
 
-  cards: [{
-    type: Number,
-    name: String,
-    numberOwned: Number
-  }],
+  user: [{type: String}],
+  cards: [{type: String, multiverseId: Number}]
 
-  user: {
-    type: String,
-    require: true
-  }
 
 })
 
-const Collection = new mongoose.model("Collection", CollectionSchema);
+const Collection = new mongoose.model("collection", CollectionSchema);
 
 module.exports = Collection;
