@@ -10,10 +10,8 @@ const CollectionSchema = new mongoose.Schema({
 
   cards: [
     {
-      type: {
-        name: String,
-        multiverseId: Number,
-      }
+      type: String,
+      multiverseId: Number
     }
   ],
   

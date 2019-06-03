@@ -1,6 +1,7 @@
 const mongoose = require(`mongoose`);
 const validator = require(`validator`);
-const Collection = require("./Collection")
+const Collection = require("./Collection");
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -35,7 +36,7 @@ const userSchema = new mongoose.Schema({
 
   collections: [
     {
-      type: Schema.Types.ObjectId,
+      type: ObjectId,
       ref: "Collection"
     }
   ]
