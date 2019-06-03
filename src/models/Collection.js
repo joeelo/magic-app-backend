@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+let ObjectId = mongoose.Schema.Types.ObjectId;
 
 const CollectionSchema = new mongoose.Schema({
   name: {
@@ -7,10 +8,19 @@ const CollectionSchema = new mongoose.Schema({
     require: true
   },
 
-  user: [{type: String}],
-  cards: [{type: String, multiverseId: Number}]
-
-
+  cards: [
+    {
+      type: {
+        name: String,
+        multiverseId: Number,
+      }
+    }
+  ],
+  
+  owner: {
+      type: ObjectId, 
+      ref: "User"
+  }
 })
 
 const Collection = new mongoose.model("collection", CollectionSchema);

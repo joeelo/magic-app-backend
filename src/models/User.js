@@ -33,7 +33,12 @@ const userSchema = new mongoose.Schema({
     }
   }, 
 
-  collections: [{type: String}]
+  collections: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Collection"
+    }
+  ]
 
 })
 
