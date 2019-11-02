@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
-    "mongoose": "^5.5.2",
+    "mongoose": "^5.7.5",
     "mongoose-unique-validator": "^2.0.3",
     "mtgsdk": "^0.4.2",
     "nodemon": "^1.19.0",
