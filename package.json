@@ -21,7 +21,7 @@
     "react": "^16.8.6",
     "request": "^2.88.0",
     "require": "^2.4.20",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {},
   "repository": {
